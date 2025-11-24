@@ -97,4 +97,30 @@ public class EmployeeController {
         return Result.success();
     }
 
+
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询员工信息")
+    public Result<Employee> getById(@PathVariable Long id) {
+        log.info("根据id查询员工信息：{}", id);
+        //这里可以调用service层的方法获取员工信息
+        Employee employee = employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+    /**
+     * 修改员工信息
+     *
+     * @param employeeDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation("修改员工信息")
+    public Result update(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("修改员工信息：{}", employeeDTO);
+        //调用service层的方法修改员工信息
+        employeeService.update(employeeDTO);
+        return Result.success();
+    }
+
 }
+

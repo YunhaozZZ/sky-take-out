@@ -16,7 +16,7 @@ ORDER BY e.create_time DESC
             <if test="password != null and password != ''"> password = #{password}, </if>
             <if test="phone != null and phone != ''"> phone = #{phone},</if>
             <if test="sex != null and sex != ''"> sex = #{sex},</if>
-            <if test="idNumber != null and idNumber != ''"> id_Number = #{idNumber}, </if>
+            <if test="idNumber != null and idNumber != ''"> id_number = #{idNumber}, </if>
             <if test="updateTime != null" > update_Time = #{updateTime}, </if>
             <if test="updateUser != null"> update_User = #{updateUser} </if>
             <if test="status != null"> status = #{status}, </if>
